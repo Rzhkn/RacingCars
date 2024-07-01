@@ -1,0 +1,275 @@
+* {
+    margin: 0;
+    font-family: 'Roboto';
+    font-size: 16px;
+}
+
+:root {
+    --color-viol: #21194D;
+    --color-fiol: #645F83;
+    --color-rose-20: #451B66;
+    --color-cian: #10EACC;
+    --color-black: #010107;
+}
+
+.nav_wrap {
+    background-color: var(--color-viol);
+}
+
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 30px 50px 20px 50px;
+}
+
+.nav .menu {
+    display: none;
+    width: 40px;
+    height: 40px;
+    background-image: url(IMG/menu.svg);
+}
+
+.nav_text {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.nav_text div {
+    font-size: 1.2rem;
+    color: white;
+    margin: auto 20px;
+}
+
+.nav_tel {
+    font-size: 2rem;
+    margin: auto 0;
+    color: var(--color-cian);
+}
+
+.nav_wrap .lin {
+    height: 1px;
+    margin: 0 20px;
+    background-color: white;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(var(--color-viol), var(--color-black));
+    padding: 50px 0;
+}
+
+
+.items-wrap {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    grid-gap: 50px;
+    width: 100%;
+}
+
+.items-wrap:before,
+.items-wrap:after {
+    content: "";
+    height: 100%;
+    top: 0;
+    width: 10%;
+    position: absolute;
+    pointer-events: none;
+}
+
+.items {
+    display: flex;
+    counter-reset: item;
+    grid-gap: 50px;
+    justify-content: space-around;
+    min-width: 100%;
+}
+
+.item {
+    flex: 0 0 auto;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: var(--color-rose-20);
+    transition: all 0.1s ease-in-out;
+}
+
+.marquee {
+    animation: scroll 10s linear infinite;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(-100% - 50px));
+    }
+}
+
+.main {
+    width: 100%;
+    margin: 0 100px;
+}
+
+.home {
+    display: flex;
+    justify-content: space-around;
+}
+
+.home h1 {
+    font-size: 5rem;
+    color: white;
+}
+
+.home h3 {
+
+    font-size: 1.3rem;
+    color: white;
+}
+
+.home p {
+    margin-top: 30px;
+    font-size: 1rem;
+    color: var(--color-fiol);
+}
+
+.avto .ramka {
+    width: 300px;
+    height: 300px;
+    border: 10px solid #940290;
+}
+
+.social {
+    margin: auto 0;
+    margin-right: 50px;
+}
+
+.soc {
+    width: 40px;
+    height: 40px;
+    margin: 40px 0;
+}
+
+.soc:hover {
+    transform: scale(1.3);
+}
+
+@media (max-width: 1300px) {
+
+    * {
+        font-size: 14px;
+    }
+
+    .header {
+        flex-wrap: wrap;
+    }
+
+    .social {
+        display: flex;
+        margin: 0 auto;
+    }
+
+    .soc {
+        margin: 0 20px;
+    }
+
+    .main {
+        margin: 50px 0;
+    }
+
+    .home {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+}
+
+@media (min-width: 1300px) {
+    .nav {
+        justify-content: space-between;
+    }
+
+    .items-wrap {
+        width: 3rem;
+        margin-left: 50px;
+        height: 35%;
+        transform: rotate(180deg);
+        writing-mode: vertical-rl;
+    }
+
+    .items {
+        display: ;
+    }
+
+    .item:last-child {
+        display: none;
+    }
+
+    .item {
+        display: block;
+        height: 400px;
+    }
+
+    .marquee {
+        animation: scroll 5s linear infinite;
+    }
+
+    @keyframes scroll {
+        from {
+            transform: translateY(0);
+        }
+
+        to {
+            transform: translateY(calc(-100% - 50px));
+        }
+    }
+}
+
+@media (max-width: 640px) {
+    .nav {
+        justify-content: space-between;
+    }
+
+    .nav .menu {
+        display: block;
+    }
+
+    .nav_text {
+        display: none;
+    }
+
+    .item:last-child {
+        display: none;
+    }
+
+    .marquee {
+        animation: scroll 5s linear infinite;
+    }
+
+    .home {
+        display: block;
+        flex-wrap: nowrap;
+        text-align: center;
+    }
+
+    .ramka {
+        margin: 0 auto;
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    * {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 320px) {}
