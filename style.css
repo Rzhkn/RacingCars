@@ -96,6 +96,7 @@
     align-items: center;
     font-size: 2rem;
     color: var(--color-rose-20);
+    font-weight: bold;
     transition: all 0.1s ease-in-out;
 }
 
@@ -215,7 +216,7 @@
 
     .item {
         display: block;
-        height: 400px;
+        height: 420px;
     }
 
     .marquee {
@@ -236,6 +237,8 @@
 @media (max-width: 640px) {
     .nav {
         justify-content: space-between;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
     .nav .menu {
@@ -258,6 +261,14 @@
         display: block;
         flex-wrap: nowrap;
         text-align: center;
+    }
+    
+    .home h3 {
+        font-size: 1.5rem;
+    }
+    
+    .home p {
+        font-size: 1.2rem;
     }
 
     .ramka {
