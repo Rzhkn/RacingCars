@@ -665,7 +665,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
     }
 
     .nav .nav_tel {
-        margin-top: 6px;
+        margin-top: 0;
     }
 
     .item {
