@@ -9,10 +9,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
+
 
     <main>
 
@@ -43,53 +49,252 @@
             <div class="lin"></div>
         </div>
 
-        <div class="header">
+        <div class="background">
+            <div class="circle1">
+                <div class="circle2">
 
-            <div class="items-wrap">
-                <div class="items marquee">
-                    <div class="item">—Выгодное предложение—</div>
-                    <div class="item">—Выгодное предложение—</div>
-                </div>
-                <div class="items marquee">
-                    <div class="item">—Выгодное предложение—</div>
-                    <div class="item">—Выгодное предложение—</div>
-                </div>
-            </div>
+                    <div class="header">
+                        <div class="items-wrap">
+                            <div class="items marquee">
+                                <div class="item">—Выгодное предложение—</div>
+                                <div class="item">—Выгодное предложение—</div>
+                            </div>
+                            <div class="items marquee">
+                                <div class="item">—Выгодное предложение—</div>
+                                <div class="item">—Выгодное предложение—</div>
+                            </div>
+                        </div>
 
-            <div class="main">
+                        <div class="main">
 
-                <div class="home">
-                    <div class="text">
-                        <h1>Аренда<br>автомобилей</h1>
-                        <h3>На все случаи жизни</h3>
-                        <p>Свежие комфортабельные, безопасные, чистые автомобили, без наклеек и визуальных установок, застрахованы по КАСКО И ОСАГО</p>
-                        <a href="#" aria-label="Car rental form">
-                            <div class="button">Арендовать сейчас</div>
-                        </a>
+                            <div class="home">
+                                <div class="text">
+                                    <h1>Аренда<br>автомобилей</h1>
+                                    <h2>На все случаи жизни</h2>
+                                    <p>Свежие комфортабельные, безопасные, чистые автомобили, без наклеек и визуальных установок, застрахованы по КАСКО И ОСАГО</p>
+                                    <a href="#" aria-label="Car rental form">
+                                        <div class="button">Арендовать сейчас</div>
+                                    </a>
+                                </div>
+                                <div class="avto">
+                                    <div class="auto_img"></div>
+                                    <div class="ramka"></div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="social">
+                            <a href="#" aria-label="Сompany account in Telegram">
+                                <div class="soc" style="background-image: url(IMG/telegram.svg)"></div>
+                            </a>
+                            <a href="#" aria-label="Company account on WhatsApp">
+                                <div class="soc" style="background-image: url(IMG/whatsapp.svg)"></div>
+                            </a>
+                            <a href="#" aria-label="Company account on VK">
+                                <div class="soc" style="background-image: url(IMG/vk.svg)"></div>
+                            </a>
+                            <a href="#" aria-label="Company account on Instagram">
+                                <div class="soc" style="background-image: url(IMG/instagram.svg)"></div>
+                            </a>
+                        </div>
                     </div>
-                    <div class="avto">
-                        <div class="auto_img"></div>
-                        <div class="ramka"></div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="interval"></div>
+
+        <div class="autos">
+            <div class="auto_wrap">
+                <div class="filters">
+                    <div class="blur"></div>
+                    <a href="#"><div class="icon"></div></a>
+                    <h3>Фильтры</h3>
+
+                    <div class="filter">
+                        <div class="lin"></div>
+                        <div class="title">
+                            <div class="img" style="background-image: url(IMG/calendar.svg)"></div>
+                            <p>Время аренды</p>
+                        </div>
+                        <div class="inputs">
+                            <div class="input">
+                                <p>Дата начала</p>
+                                <div class="date-container">
+                                    <input class="date" type="date" value="2024-06-01" />
+                                    <div class="open-button"></div>
+                                </div>
+                            </div>
+                            <div class="input" id="in_1">
+                                <p>Дата окончания</p>
+                                <div class="date-container">
+                                    <input class="date" type="date" value="2024-06-02" />
+                                    <div class="open-button"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="filter">
+                        <div class="lin"></div>
+                        <div class="title">
+                            <div class="img" style="background-image: url(IMG/city.svg)"></div>
+                            <p>Город</p>
+                        </div>
+                        <div class="inputs">
+                            <div class="input">
+                                <p>Город получения</p>
+                                <select name="cities" id="...">
+                                    <option value="">Выберите город</option>
+                                    <option value="Moscow">Москва</option>
+                                    <option value="Saint-Petersburg">Санкт-Петербург</option>
+                                    <option value="Kazan">Казань</option>
+                                    <option value="Nizhny Novgorod">Нижний Новгород</option>
+                                </select>
+                            </div>
+                            <div class="input">
+                                <p>Город возврата</p>
+                                <select name="cities" id="...">
+                                    <option value="">Выберите город</option>
+                                    <option value="Moscow">Москва</option>
+                                    <option value="Saint-Petersburg">Санкт-Петербург</option>
+                                    <option value="Kazan">Казань</option>
+                                    <option value="Nizhny Novgorod">Нижний Новгород</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="filter">
+                        <div class="lin"></div>
+                        <div class="title">
+                            <div class="img" style="background-image: url(IMG/car.svg)"></div>
+                            <p>Автомобиль</p>
+                        </div>
+                        <div class="inputs">
+                            <div class="checks">
+                                <div class="check">
+                                    <p class="title_ch">Водитель</p>
+                                    <p class="text_ch"><input type="checkbox" name="a" value="1417"> С водителем</p>
+                                </div>
+                                <div class="check">
+                                    <p class="title_ch">Тип кузова</p>
+                                    <div class="check_wrap">
+                                        <div class="check_wrap_1">
+                                            <p class="text_ch"><input type="checkbox" name="a" value="1417"> Внедорожник</p>
+                                            <p class="text_ch"><input type="checkbox" name="a" value="1417"> Минивэн</p>
+                                        </div>
+                                        <div class="check_wrap_2">
+                                            <p class="text_ch"><input type="checkbox" name="a" value="1417"> Бизнес класс</p>
+                                            <p class="text_ch"><input type="checkbox" name="a" value="1417"> Комфорт класс</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="check">
+                                    <p class="title_ch">Марка автомобиля</p>
+                                    <div class="check_wrap">
+                                        <div class="check_wrap_1">
+                                            <p class="text_ch"><input type="checkbox" name="a" value="1417"> BMW</p>
+                                            <p class="text_ch"><input type="checkbox" name="a" value="1417"> Hyundai</p>
+                                        </div>
+                                        <div class="check_wrap_2">
+                                            <p class="text_ch"><input type="checkbox" name="a" value="1417"> Mercedes</p>
+                                            <p class="text_ch"><input type="checkbox" name="a" value="1417"> Renault</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <div class="objects_wrap">
+                    <div class="sort">
+                        <label for="">Цена: <select name="price" id="...">
+                                <option value="">Сначала дороже</option>
+                                <option value="Moscow">Сначала дешевле</option>
+                            </select></label>
+                    </div>
+                    <div class="objects">
+                        <div class="object">
+                            <div class="img"></div>
+                            <h4>LAND ROVER RANGE ROVER 5.0 SUPERCHARGED</h4>
+                            <div class="info">
+                                <div class="inf">
+                                    <p>Год выпуска <span class="i">2014</span></p>
+                                    <p>КПП <span class="i">А</span></p>
+                                    <p>Мест <span class="i">5</span></p>
+                                </div>
+                                <div class="price">
+                                    <p>Цена <span class="i">40.000 руб</span></p>
+                                </div>
+                            </div>
+                            <div class="buttons">
+                                <a href="#">
+                                    <div class="button1">Подробнее</div>
+                                </a>
+                                <a href="#">
+                                    <div class="button2">Забронировать</div>
+                                </a>
+                            </div>
 
+                        </div>
+
+                        <div class="object">
+                            <div class="img"></div>
+                            <h4>LAND ROVER RANGE ROVER 5.0 SUPERCHARGED</h4>
+                            <div class="info">
+                                <div class="inf">
+                                    <p>Год выпуска <span class="i">2014</span></p>
+                                    <p>КПП <span class="i">А</span></p>
+                                    <p>Мест <span class="i">5</span></p>
+                                </div>
+                                <div class="price">
+                                    <p>Цена <span class="i">40.000 руб</span></p>
+                                </div>
+                            </div>
+                            <div class="buttons">
+                                <a href="#">
+                                    <div class="button1">Подробнее</div>
+                                </a>
+                                <a href="#">
+                                    <div class="button2">Забронировать</div>
+                                </a>
+                            </div>
+
+                        </div>
+
+                        <div class="object">
+                            <div class="img"></div>
+                            <h4>LAND ROVER RANGE ROVER 5.0 SUPERCHARGED</h4>
+                            <div class="info">
+                                <div class="inf">
+                                    <p>Год выпуска <span class="i">2014</span></p>
+                                    <p>КПП <span class="i">А</span></p>
+                                    <p>Мест <span class="i">5</span></p>
+                                </div>
+                                <div class="price">
+                                    <p>Цена <span class="i">40.000 руб</span></p>
+                                </div>
+                            </div>
+                            <div class="buttons">
+                                <a href="#">
+                                    <div class="button1">Подробнее</div>
+                                </a>
+                                <a href="#">
+                                    <div class="button2">Забронировать</div>
+                                </a>
+                            </div>
+
+                        </div>
+
+
+
+
+                    </div>
+                </div>
             </div>
-
-            <div class="social">
-                <a href="#" aria-label="Сompany account in Telegram">
-                    <div class="soc" style="background-image: url(IMG/telegram.svg)"></div>
-                </a>
-                <a href="#" aria-label="Company account on WhatsApp">
-                    <div class="soc" style="background-image: url(IMG/whatsapp.svg)"></div>
-                </a>
-                <a href="#" aria-label="Company account on VK">
-                    <div class="soc" style="background-image: url(IMG/vk.svg)"></div>
-                </a>
-                <a href="#" aria-label="Company account on Instagram">
-                    <div class="soc" style="background-image: url(IMG/instagram.svg)"></div>
-                </a>
-            </div>
-
         </div>
 
     </main>

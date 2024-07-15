@@ -3,6 +3,7 @@
     font-family: 'Roboto';
     font-size: 16px;
     text-decoration: none;
+    box-sizing: border-box;
 }
 
 :root {
@@ -12,9 +13,12 @@
     --color-rose-20: #451B66;
     --color-cian: #10EACC;
     --color-black: #010107;
+
+    --size-car: calc(100px + 400 * (100vw / 1924));
 }
 
 .nav_wrap {
+    min-height: 100px;
     background-color: var(--color-viol);
 }
 
@@ -51,25 +55,44 @@
 }
 
 .nav_tel {
+    font-family: "Oswald";
     font-size: 2rem;
     margin: auto 0;
     color: var(--color-cian);
 }
 
-.nav_wrap .lin {
+.lin {
     height: 1px;
     margin: 0 20px;
     background-color: white;
     opacity: 0.5;
 }
 
-.header {
-    display: flex;
-    justify-content: space-between;
+.background {
+    min-height: calc(100vh - 100px);
     background: linear-gradient(var(--color-viol), var(--color-black));
-    padding: 50px 0;
 }
 
+.circle1 {
+    min-height: calc(100vh - 100px);
+    background-position: bottom left;
+    background-image: url(IMG/Ellipse%201.svg);
+    background-repeat: no-repeat;
+}
+
+.circle2 {
+    min-height: calc(100vh - 100px);
+    background-position: right top;
+    background-image: url(IMG/Ellipse%202.svg);
+    background-repeat: no-repeat;
+}
+
+.header {
+    min-height: calc(100vh - 100px);
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 0;
+}
 
 .items-wrap {
     position: relative;
@@ -99,11 +122,12 @@
 
 .item {
     flex: 0 0 auto;
-    height: 2rem;
+    height: 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
+    font-family: "Oswald";
+    font-size: 2.8rem;
     color: var(--color-rose-20);
     font-weight: bold;
     transition: all 0.1s ease-in-out;
@@ -130,54 +154,59 @@
 }
 
 .home {
+    min-height: calc(100vh - 300px);
     display: flex;
     justify-content: space-around;
 }
 
 .home h1 {
-    font-size: 5rem;
+    font-family: "Oswald";
+    margin-top: 30px;
+    font-size: calc(24px + 72 * (100vw / 1924));
     color: white;
 }
 
-.home h3 {
-    margin-top: 5px;
-    font-size: 1.2rem;
+.home h2 {
+    margin-top: 15px;
+    font-weight: 100;
+    font-size: calc(20px + 12 * (100vw / 1924));
     color: white;
 }
 
 .home p {
-    margin-top: 30px;
-    width: 480px;
-    font-size: 1rem;
+    margin-top: 40px;
+    width: 450px;
+    font-size: calc(16px + 4 * (100vw / 1924));
     color: var(--color-fiol);
 }
 
-.button {
+.home .button {
     margin: 50px 0 20px 0;
     display: inline-block;
     padding: 15px 30px;
+    font-family: "Oswald";
     color: var(--color-black);
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     font-weight: bold;
     border-radius: 4px;
     background-color: var(--color-cian);
 }
 
-.button:hover {
+.home .button:hover {
     box-shadow: 0 0 15px rgba(10, 237, 207, 0.4);
     transform: scale(1.1);
 }
 
 .avto {
-    width: calc(20vw + 10vw + 10px);
-    height: 20vw;
-    margin: auto 0;
+    width: calc(var(--size-car) + 100px + 18px);
+    height: var(--size-car);
+    margin-top: auto;
 }
 
 .auto_img {
     position: absolute;
-    width: calc(20vw + 10vw);
-    height: 20vw;
+    width: calc(var(--size-car) + 100px);
+    height: var(--size-car);
     padding-top: 10px;
     background-image: url(IMG/auto.png);
     background-repeat: no-repeat;
@@ -186,12 +215,12 @@
 }
 
 .avto .ramka {
-    width: 20vw;
-    height: 20vw;
+    width: var(--size-car);
+    height: var(--size-car);
     margin-left: auto;
     box-sizing: border-box;
     border-radius: 5px;
-    border: 10px solid var(--color-rose-20);
+    border: 18px solid var(--color-rose-20);
 }
 
 .social {
@@ -209,10 +238,285 @@
     transform: scale(1.3);
 }
 
-@media (max-width: 1300px) {
+
+.interval {
+    min-height: 100vh;
+    background-image: url(IMG/b2.png);
+    background-attachment: fixed;
+}
+
+.autos {
+    min-height: 100vh;
+    background: linear-gradient(var(--color-viol), var(--color-black));
+}
+
+.auto_wrap {
+    display: flex;
+}
+
+.filters {
+    max-width: 40%;
+    min-width: inherit;
+    color: white;
+    box-sizing: border-box;
+    background-color: rgba(13, 10, 33, 0.2);
+    padding-bottom: 70px;
+}
+
+.filters h3 {
+    font-family: "Oswald";
+    font-size: 2rem;
+    margin: 70px 50px 10px 50px;
+}
+
+.filter {
+    margin-top: 30px;
+}
+
+.filter .lin {
+    margin: 0;
+    height: 2px;
+}
+
+.title {
+    display: flex;
+    margin: 20px 50px;
+}
+
+.title .img {
+    width: 24px;
+    height: 24px;
+}
+
+.title p {
+    font-size: 1.3rem;
+    margin-left: 10px;
+}
+
+.inputs {
+    display: flex;
+    margin: 0 50px;
+}
+
+.input p {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.inputs .input:last-child {
+    margin-left: 20px;
+}
+
+input[type=date]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+}
+
+.input input[type='date'] {
+    font-size: 1.3rem;
+    color: white;
+    padding: 7px 5px;
+    border-radius: 5px;
+    border: 2px solid var(--color-fiol);
+    background: transparent;
+}
+
+.date-container {
+    position: relative;
+    float: left;
+}
+
+.open-button {
+    position: absolute;
+    top: 13px;
+    right: 10px;
+    width: 18px;
+    height: 18px;
+    pointer-events: none;
+    background-image: url(IMG/calendar.svg);
+    background-size: cover;
+}
+
+.input select {
+    font-size: 1rem;
+    color: white;
+    padding: 10px 8px;
+    border-radius: 5px;
+    border: 2px solid var(--color-fiol);
+    background: transparent;
+}
+
+.input option {
+    background-color: var(--color-viol);
+    font-size: 1rem;
+}
+
+.checks {
+    width: 100%;
+}
+
+.check {
+    margin-bottom: 20px;
+}
+
+.check .title_ch {
+    margin-bottom: 5px;
+}
+
+.check .text_ch {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+.check input[type='checkbox'] {
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+    border: 2px solid var(--color-fiol);
+    border-radius: 5px;
+}
+
+.check .check_wrap {
+    display: flex;
+    max-width: 350px;
+    width: 100%;
+}
+
+.check .check_wrap_1,
+.check .check_wrap_2 {
+    width: calc(100% /2);
+}
+
+.objects_wrap {
+    width: 100%;
+    margin-left: 30px;
+    padding: 70px 50px;
+    /*    background-color: aqua;*/
+}
+
+.sort label {
+    color: white;
+    font-size: 1.4rem;
+}
+
+.sort select {
+    color: white;
+    font-size: 1.4rem;
+    background: transparent;
+    border: 0px solid #FFF;
+}
+
+.sort select:focus,
+.sort select:active {
+    border: 0px solid #FFF;
+}
+
+.sort option {
+    color: white;
+    background-color: var(--color-viol);
+    font-size: 1.2rem;
+}
+
+.objects {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    /*    background-color: red;*/
+    padding: 40px 0;
+}
+
+.object {
+    margin-bottom: 40px;
+    max-width: 370px;
+    min-width: inherit;
+    min-height: inherit;
+    padding: 40px;
+    border-radius: 25px;
+    border: 4px solid var(--color-fiol);
+    background: linear-gradient(var(--color-viol), var(--color-black));
+}
+
+.object .img {
+    height: 180px;
+    border-radius: 10px;
+    border: 2px solid var(--color-fiol);
+    background: linear-gradient(var(--color-viol), var(--color-black));
+}
+
+.object h4 {
+    margin-top: 30px;
+    font-size: 1.3rem;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: linear-gradient(to right, var(--color-cian), var(--color-rose));
+}
+
+.object .info .inf {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    color: var(--color-fiol);
+    font-size: 1rem;
+}
+
+.object .info .inf .i {
+    margin-left: 2px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.object .info .price p {
+    color: var(--color-fiol);
+    font-size: 1rem;
+}
+
+.object .info .price p .i {
+    margin-left: 3px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.object .buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.object .button1,
+.object .button2 {
+    font-size: 1rem;
+    padding: 10px 14px;
+    border: 2px solid var(--color-cian);
+    border-radius: 5px;
+}
+
+.object .button1 {
+    color: var(--color-cian);
+}
+
+.object .button2 {
+    font-weight: bold;
+    color: var(--color-black);
+    background-color: var(--color-cian);
+}
+
+.object .button1:hover,
+.object .button2:hover {
+    box-shadow: 0 0 15px rgba(10, 237, 207, 0.2);
+}
+
+@media (max-width: 1400px) {
 
     * {
         font-size: 14px;
+    }
+
+    .item {
+        font-size: calc(24px + 18 * (100vw / 1400));
     }
 
     .header {
@@ -233,39 +537,55 @@
     }
 
     .home {
+        min-height: inherit;
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap;
         padding: 0 20px;
     }
 
+    .home h1 {
+        margin-top: 0;
+    }
+
     .avto {
-        width: calc(30vw + 10vw + 10px);
-        height: 30vw;
+        margin: auto 0;
     }
 
-    .auto_img {
-        position: absolute;
-        width: calc(30vw + 10vw);
-        height: 30vw;
+    .inputs {
+        display: inline-block;
     }
 
-    .avto .ramka {
-        width: 30vw;
-        height: 30vw;
+    .inputs .input:last-child {
+        margin: 0;
+        margin-top: 20px;
     }
+
+    .check .check_wrap {
+        display: block;
+    }
+
+    .check .check_wrap_1,
+    .check .check_wrap_2 {
+        width: 100%;
+    }
+
+    #in_1 {
+        margin-top: 70px;
+    }
+
 
 }
 
-@media (min-width: 1300px) {
+@media (min-width: 1400px) {
     .nav {
         justify-content: space-between;
     }
 
     .items-wrap {
-        width: 3rem;
+        width: 4.3rem;
         margin-left: 50px;
-        height: 45%;
+        height: 75%;
         transform: rotate(180deg);
         writing-mode: vertical-rl;
     }
@@ -276,7 +596,7 @@
 
     .item {
         display: block;
-        height: 420px;
+        height: 650px;
     }
 
     .marquee {
@@ -294,30 +614,42 @@
     }
 }
 
-@media (max-width: 920px) {
+@media (max-width: 950px) {
     .nav .nav_tel {
         margin-top: 10px;
     }
-    
+
+    .item {
+        font-size: calc(20px + 10 * (100vw / 950));
+    }
+
     .home {
         display: block;
         flex-wrap: nowrap;
         text-align: center;
     }
-    
+
+    .home h1 {
+        font-size: calc(32px + 32 * (100vw / 950));
+    }
+
+    .home h2 {
+        font-size: calc(20px + 4 * (100vw / 950));
+    }
+
     .home p {
-        font-size: 1.2rem;
         margin: 30px auto;
         margin-bottom: 0;
         width: 550px;
+        font-size: calc(16px + 4 * (100vw / 950));
     }
-    
+
     .avto {
         display: none;
     }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 750px) {
     .nav {
         justify-content: space-between;
         padding-left: 20px;
@@ -331,13 +663,13 @@
     .nav_text {
         display: none;
     }
-    
+
     .nav .nav_tel {
-        margin-top: 3px;
+        margin-top: 6px;
     }
-    
-    .nav .nav_tel  a{
-    
+
+    .item {
+        font-size: calc(24px + 12 * (100vw / 720));
     }
 
     .item:last-child {
@@ -348,20 +680,15 @@
         animation: scroll 5s linear infinite;
     }
 
-    .home h3 {
-        font-size: 1.5rem;
-    }
-    
     .home p {
-        font-size: 1.4rem;
         margin: 30px auto;
         width: auto;
-        padding: 0 10px;
+        padding: 0 50px;
     }
 
     .button {
         margin: 15px 0 30px 0;
-        font-size: 1.3rem;
+        font-size: 1.5rem;
         box-shadow: 0 0 15px rgba(10, 237, 207, 0.4);
     }
 
@@ -369,11 +696,55 @@
         margin: 0 auto;
         margin-top: 30px;
     }
+    
+    .auto_wrap {
+        display: block;
+    }
+    
+    .auto_wrap .blur, .auto_wrap .filter {
+        display: none;
+    }
+    
+    .auto_wrap .filters {
+        display: flex;
+        max-width: 100%;
+        padding: 30px;
+    }
+    
+    .auto_wrap .filters h3 {
+        margin: 0;
+        margin-left: 20px;
+    }
+    
+    .auto_wrap .filters .icon {
+        width: 40px;
+        height: 40px;
+        background-image: url(IMG/menu.svg);
+    }
+    
+    .auto_wrap .objects_wrap {
+        margin: 0;
+        padding: 30px;
+    }
+    
+    .objects_wrap .object {
+        max-width: 90%;
+        padding: 20px;
+    }
+    
 }
 
 @media (max-width: 480px) {
     * {
-        font-size: 10px;
+        font-size: 14px;
+    }
+    
+    .auto_wrap .filters {
+        padding: 20px;
+    }
+    
+    .auto_wrap .objects_wrap {
+        padding: 20px;
     }
 }
 

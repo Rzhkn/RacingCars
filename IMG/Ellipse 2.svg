@@ -1,0 +1,19 @@
+<svg width="500" height="500" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g filter="url(#blur)">
+        <circle cx="200" cy="200" r="180" fill="url(#linDrad)" />
+    </g>
+    <defs>
+        
+        <filter id="blur" x="1" y="1" width="500" height="500" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+            <feGaussianBlur stdDeviation="7.5" result="effect1_foregroundBlur_188_248" />
+        </filter>
+        
+        <linearGradient id="linDrad" x1="0%" y1="100%" x2="100%" y2="0%" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#201849" />
+            <stop offset="1" stop-color="#110D2A" />
+        </linearGradient>
+        
+    </defs>
+</svg>
