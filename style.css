@@ -748,4 +748,8 @@ input[type=date]::-webkit-calendar-picker-indicator {
     }
 }
 
-@media (max-width: 320px) {}
+@media (max-width: 370px) {
+    * {
+        font-size: 12px;
+    }
+}
