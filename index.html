@@ -24,7 +24,7 @@
 
         <div class="nav_wrap">
             <div class="nav">
-                <div class="menu"></div>
+                <a href="#" aria-label="Burger menu"><div class="menu"></div></a>
                 <div class="nav_text">
                     <a href="#" aria-label="Home">
                         <div>Главная</div>
@@ -110,7 +110,7 @@
             <div class="auto_wrap">
                 <div class="filters">
                     <div class="blur"></div>
-                    <a href="#"><div class="icon"></div></a>
+                    <a href="#" aria-label="Burger menu"><div class="icon"></div></a>
                     <h3>Фильтры</h3>
 
                     <div class="filter">
@@ -123,14 +123,14 @@
                             <div class="input">
                                 <p>Дата начала</p>
                                 <div class="date-container">
-                                    <input class="date" type="date" value="2024-06-01" />
+                                    <input onchange="funDate()" class="date" id="date_start" type="date" />
                                     <div class="open-button"></div>
                                 </div>
                             </div>
                             <div class="input" id="in_1">
                                 <p>Дата окончания</p>
                                 <div class="date-container">
-                                    <input class="date" type="date" value="2024-06-02" />
+                                    <input class="date" id="date_end" type="date" />
                                     <div class="open-button"></div>
                                 </div>
                             </div>
@@ -182,27 +182,22 @@
                                 <div class="check">
                                     <p class="title_ch">Тип кузова</p>
                                     <div class="check_wrap">
-                                        <div class="check_wrap_1">
-                                            <p class="text_ch"><input type="checkbox" name="a" value="1417"> Внедорожник</p>
-                                            <p class="text_ch"><input type="checkbox" name="a" value="1417"> Минивэн</p>
-                                        </div>
-                                        <div class="check_wrap_2">
-                                            <p class="text_ch"><input type="checkbox" name="a" value="1417"> Бизнес класс</p>
-                                            <p class="text_ch"><input type="checkbox" name="a" value="1417"> Комфорт класс</p>
-                                        </div>
+                                        <div class="check_wrap_1 scr_body1"></div>
+                                        <div class="check_wrap_2 scr_body2"></div>
+                                    </div>
+                                </div>
+                                <div class="check">
+                                    <p class="title_ch">Класс автомобиля</p>
+                                    <div class="check_wrap">
+                                        <div class="check_wrap_1 scr_class1"></div>
+                                        <div class="check_wrap_2 scr_class2"></div>
                                     </div>
                                 </div>
                                 <div class="check">
                                     <p class="title_ch">Марка автомобиля</p>
                                     <div class="check_wrap">
-                                        <div class="check_wrap_1">
-                                            <p class="text_ch"><input type="checkbox" name="a" value="1417"> BMW</p>
-                                            <p class="text_ch"><input type="checkbox" name="a" value="1417"> Hyundai</p>
-                                        </div>
-                                        <div class="check_wrap_2">
-                                            <p class="text_ch"><input type="checkbox" name="a" value="1417"> Mercedes</p>
-                                            <p class="text_ch"><input type="checkbox" name="a" value="1417"> Renault</p>
-                                        </div>
+                                        <div class="check_wrap_1 scr_make1"></div>
+                                        <div class="check_wrap_2 scr_make2"></div>
                                     </div>
                                 </div>
                             </div>
@@ -216,83 +211,8 @@
                                 <option value="Moscow">Сначала дешевле</option>
                             </select></label>
                     </div>
-                    <div class="objects">
-                        <div class="object">
-                            <div class="img"></div>
-                            <h4>LAND ROVER RANGE ROVER 5.0 SUPERCHARGED</h4>
-                            <div class="info">
-                                <div class="inf">
-                                    <p>Год выпуска <span class="i">2014</span></p>
-                                    <p>КПП <span class="i">А</span></p>
-                                    <p>Мест <span class="i">5</span></p>
-                                </div>
-                                <div class="price">
-                                    <p>Цена <span class="i">40.000 руб</span></p>
-                                </div>
-                            </div>
-                            <div class="buttons">
-                                <a href="#">
-                                    <div class="button1">Подробнее</div>
-                                </a>
-                                <a href="#">
-                                    <div class="button2">Забронировать</div>
-                                </a>
-                            </div>
-
-                        </div>
-
-                        <div class="object">
-                            <div class="img"></div>
-                            <h4>LAND ROVER RANGE ROVER 5.0 SUPERCHARGED</h4>
-                            <div class="info">
-                                <div class="inf">
-                                    <p>Год выпуска <span class="i">2014</span></p>
-                                    <p>КПП <span class="i">А</span></p>
-                                    <p>Мест <span class="i">5</span></p>
-                                </div>
-                                <div class="price">
-                                    <p>Цена <span class="i">40.000 руб</span></p>
-                                </div>
-                            </div>
-                            <div class="buttons">
-                                <a href="#">
-                                    <div class="button1">Подробнее</div>
-                                </a>
-                                <a href="#">
-                                    <div class="button2">Забронировать</div>
-                                </a>
-                            </div>
-
-                        </div>
-
-                        <div class="object">
-                            <div class="img"></div>
-                            <h4>LAND ROVER RANGE ROVER 5.0 SUPERCHARGED</h4>
-                            <div class="info">
-                                <div class="inf">
-                                    <p>Год выпуска <span class="i">2014</span></p>
-                                    <p>КПП <span class="i">А</span></p>
-                                    <p>Мест <span class="i">5</span></p>
-                                </div>
-                                <div class="price">
-                                    <p>Цена <span class="i">40.000 руб</span></p>
-                                </div>
-                            </div>
-                            <div class="buttons">
-                                <a href="#">
-                                    <div class="button1">Подробнее</div>
-                                </a>
-                                <a href="#">
-                                    <div class="button2">Забронировать</div>
-                                </a>
-                            </div>
-
-                        </div>
-
-
-
-
-                    </div>
+                    <div class="objects"></div>
+                    <div class="nav_auto"></div>
                 </div>
             </div>
         </div>
@@ -303,4 +223,14 @@
 
     </footer>
 
-</body></html>
+</body>
+
+
+<!--информация о автомобилях-->
+<script type="text/javascript" src="BD/db.js"></script>
+
+<!--вывод карточек-->
+<script type="text/javascript" src="script.js"></script>
+
+
+</html>

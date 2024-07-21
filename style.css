@@ -312,6 +312,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 }
 
 .input input[type='date'] {
+    width: 180px;
     font-size: 1.3rem;
     color: white;
     padding: 7px 5px;
@@ -366,13 +367,13 @@ input[type=date]::-webkit-calendar-picker-indicator {
     display: flex;
     align-items: center;
     font-size: 0.9rem;
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 .check input[type='checkbox'] {
-    width: 18px;
-    height: 18px;
-    margin-right: 5px;
+    width: 20px;
+    height: 20px;
+    margin-right: 7px;
     border: 2px solid var(--color-fiol);
     border-radius: 5px;
 }
@@ -424,15 +425,14 @@ input[type=date]::-webkit-calendar-picker-indicator {
     justify-content: space-around;
     flex-wrap: wrap;
     /*    background-color: red;*/
-    padding: 40px 0;
+    padding-top: 40px;
 }
 
 .object {
     margin-bottom: 40px;
-    max-width: 370px;
-    min-width: inherit;
+    width: 370px;
     min-height: inherit;
-    padding: 40px;
+    padding: 30px;
     border-radius: 25px;
     border: 4px solid var(--color-fiol);
     background: linear-gradient(var(--color-viol), var(--color-black));
@@ -440,13 +440,23 @@ input[type=date]::-webkit-calendar-picker-indicator {
 
 .object .img {
     height: 180px;
+    text-align: center;
+    align-content: center;
     border-radius: 10px;
     border: 2px solid var(--color-fiol);
     background: linear-gradient(var(--color-viol), var(--color-black));
 }
 
+.object .img img {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    object-fit: contain;
+}
+
 .object h4 {
     margin-top: 30px;
+    text-transform: uppercase;
     font-size: 1.3rem;
     color: transparent;
     -webkit-background-clip: text;
@@ -454,7 +464,13 @@ input[type=date]::-webkit-calendar-picker-indicator {
     background-image: linear-gradient(to right, var(--color-cian), var(--color-rose));
 }
 
+.object .info {
+    user-select: none;
+    
+}
+
 .object .info .inf {
+    grid-gap: 10px;
     margin-top: 20px;
     margin-bottom: 10px;
     display: flex;
@@ -509,6 +525,36 @@ input[type=date]::-webkit-calendar-picker-indicator {
     box-shadow: 0 0 15px rgba(10, 237, 207, 0.2);
 }
 
+.objects_wrap .nav_auto {
+    display: flex;
+    place-content: center;
+    grid-gap: 20px;
+}
+
+.objects_wrap .nav_auto .num_auto {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    place-content: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+    border: 2px solid var(--color-fiol);
+    border-radius: 3px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.color_auto_A {
+    color: white;
+    background-color: var(--color-fiol);
+}
+
+.color_auto {
+    color: var(--color-fiol);
+    background-color: none;
+}
+
+
 @media (max-width: 1400px) {
 
     * {
@@ -560,6 +606,10 @@ input[type=date]::-webkit-calendar-picker-indicator {
         margin: 0;
         margin-top: 20px;
     }
+    
+    .input input[type='date'] {
+        width: 164px;
+    }
 
     .check .check_wrap {
         display: block;
@@ -572,6 +622,11 @@ input[type=date]::-webkit-calendar-picker-indicator {
 
     #in_1 {
         margin-top: 70px;
+    }
+    
+    .objects_wrap .object {
+        width: 300px;
+        padding: 20px;
     }
 
 
@@ -646,6 +701,11 @@ input[type=date]::-webkit-calendar-picker-indicator {
 
     .avto {
         display: none;
+    }
+    
+    .objects_wrap .object {
+        width: 370px;
+        padding: 20px;
     }
 }
 
@@ -728,7 +788,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
     }
     
     .objects_wrap .object {
-        max-width: 90%;
+        width: 300px;
         padding: 20px;
     }
     
@@ -739,6 +799,10 @@ input[type=date]::-webkit-calendar-picker-indicator {
         font-size: 14px;
     }
     
+    .home p {
+        padding: 0;
+    }
+    
     .auto_wrap .filters {
         padding: 20px;
     }
@@ -746,10 +810,14 @@ input[type=date]::-webkit-calendar-picker-indicator {
     .auto_wrap .objects_wrap {
         padding: 20px;
     }
+    
+     .objects_wrap .object {
+        width: 90%;
+    }
 }
 
-@media (max-width: 370px) {
-    * {
-        font-size: 12px;
+@media (max-width: 350px) {
+    .object .button1, .object .button2 {
+        font-size: 0.85rem;
     }
 }
