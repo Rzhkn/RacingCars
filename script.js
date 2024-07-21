@@ -1,93 +1,3 @@
-//добавление карточек с информацией об автомобиле
-const objects = document.querySelector(".objects");
-
-for (i = 0; i < db.length && i < 6; i++) {
-    objects.innerHTML += `<div class="object">
-                            <div class="img"> <img src="BD/IMG/${db[i].auto.img}" alt="auto${i+1}"> </div>
-                            <h4>${db[i].auto.title}</h4>
-                            <div class="info">
-                                <div class="inf">
-                                    <p>Год выпуска <span class="i">${db[i].auto.info.yearOfIssue}</span></p>
-                                    <p title="${db[i].auto.info.kpp2}">КПП <span class="i">${db[i].auto.info.kpp}</span></p>
-                                    <p>Мест <span class="i">${db[i].auto.info.seats}</span></p>
-                                </div>
-                                <div class="price">
-                                    <p>Цена <span class="i">${db[i].parameters.price} руб</span></p>
-                                </div>
-                            </div>
-                            <div class="buttons">
-                                <a href="#" aria-label="Detailed information about the car">
-                                    <div class="button1">Подробнее</div>
-                                </a>
-                                <a href="#" aria-label="Rent a car">
-                                    <div class="button2">Арендовать</div>
-                                </a>
-                            </div>
-
-                        </div>`;
-
-}
-
-
-const navAuto = document.querySelector(".nav_auto");
-
-if (db.length > 5) {
-    for (i = 1;
-        (i - 1) * 6 < db.length; i++) {
-        navAuto.innerHTML += `<div class="num_auto color_auto" onclick="funNav(${i-1})">${i}</div>`
-    }
-
-    const numAuto = document.querySelector(".num_auto");
-    numAuto.classList.remove("color_auto");
-    numAuto.classList.add("color_auto_A");
-}
-
-function funNav(a) {
-    const fNumAuto = document.getElementsByClassName('num_auto');
-    for (i = 0; i < fNumAuto.length; i++) {
-        if (fNumAuto[i].classList.contains("color_auto_A")) {
-            fNumAuto[i].classList.remove("color_auto_A");
-            fNumAuto[i].classList.add("color_auto");
-        }
-    }
-    fNumAuto[a].classList.remove("color_auto");
-    fNumAuto[a].classList.add("color_auto_A");
-
-    const fObjects = document.querySelector(".objects");
-    fObjects.innerHTML = "";
-    for (i = a*6; i < db.length && i < a*6+6; i++) {
-        fObjects.innerHTML += `<div class="object">
-                            <div class="img"> <img src="BD/IMG/${db[i].auto.img}" alt="auto${i+1}"> </div>
-                            <h4>${db[i].auto.title}</h4>
-                            <div class="info">
-                                <div class="inf">
-                                    <p>Год выпуска <span class="i">${db[i].auto.info.yearOfIssue}</span></p>
-                                    <p title="${db[i].auto.info.kpp2}">КПП <span class="i">${db[i].auto.info.kpp}</span></p>
-                                    <p>Мест <span class="i">${db[i].auto.info.seats}</span></p>
-                                </div>
-                                <div class="price">
-                                    <p>Цена <span class="i">${db[i].parameters.price} руб</span></p>
-                                </div>
-                            </div>
-                            <div class="buttons">
-                                <a href="#" aria-label="Detailed information about the car">
-                                    <div class="button1">Подробнее</div>
-                                </a>
-                                <a href="#" aria-label="Rent a car">
-                                    <div class="button2">Арендовать</div>
-                                </a>
-                            </div>
-
-                        </div>`;
-
-    }
-    
-    const autos = document.querySelector(".autos");
-    autos.scrollIntoView();
-}
-
-
-
 //Регулирование блоков с временем аренды
 const data = new Date();
 const year = data.getFullYear();
@@ -169,6 +79,10 @@ scrDateE.setAttribute("min", scrDateS.value)
 function funDate() {
     scrDateE.setAttribute("value", scrDateS.value)
     scrDateE.setAttribute("min", scrDateS.value)
+
+    scrDateE.value = scrDateS.value
+
+    funFilter()
 }
 
 //добавление категорий в фильтры
@@ -197,10 +111,10 @@ const scrBody2 = document.querySelector(".scr_body2");
 for (i = 0; i < masBody.length; i++) {
     if (i < masBody.length / 2) {
         scrBody1.innerHTML += `
-                                <p class="text_ch"><input type="checkbox" name="${masBody[i]}" value="1417"> ${masBody[i]}</p>`;
+                                <p class="text_ch"><input class="checkbox_auto" type="checkbox" name="body" value="${masBody[i]}" onchange="funFilter()"> ${masBody[i]}</p>`;
     } else {
         scrBody2.innerHTML += `
-                            <p class="text_ch"><input type="checkbox" name="${masBody[i]}" value="1417"> ${masBody[i]}</p>`;
+                            <p class="text_ch"><input class="checkbox_auto" type="checkbox" name="body" value="${masBody[i]}" onchange="funFilter()"> ${masBody[i]}</p>`;
     }
 }
 
@@ -209,10 +123,10 @@ const scrClass2 = document.querySelector(".scr_class2");
 for (i = 0; i < masClass.length; i++) {
     if (i < masClass.length / 2) {
         scrClass1.innerHTML += `
-                                <p class="text_ch"><input type="checkbox" name="${masClass[i]}" value="1417"> ${masClass[i]}</p>`;
+                                <p class="text_ch"><input class="checkbox_auto" type="checkbox" name="classA" value="${masClass[i]}" onchange="funFilter()"> ${masClass[i]}</p>`;
     } else {
         scrClass2.innerHTML += `
-                            <p class="text_ch"><input type="checkbox" name="${masClass[i]}" value="1417"> ${masClass[i]}</p>`;
+                            <p class="text_ch"><input class="checkbox_auto" type="checkbox" name="classA" value="${masClass[i]}" onchange="funFilter()"> ${masClass[i]}</p>`;
     }
 }
 
@@ -221,9 +135,193 @@ const scrMake2 = document.querySelector(".scr_make2");
 for (i = 0; i < masMake.length; i++) {
     if (i < masMake.length / 2) {
         scrMake1.innerHTML += `
-                                <p class="text_ch"><input type="checkbox" name="${masMake[i]}" value="1417"> ${masMake[i]}</p>`;
+                                <p class="text_ch"><input class="checkbox_auto" type="checkbox" name="make" value="${masMake[i]}" onchange="funFilter()"> ${masMake[i]}</p>`;
     } else {
         scrMake2.innerHTML += `
-                            <p class="text_ch"><input type="checkbox" name="${masMake[i]}" value="1417"> ${masMake[i]}</p>`;
+                            <p class="text_ch"><input class="checkbox_auto" type="checkbox" name="make" value="${masMake[i]}" onchange="funFilter()"> ${masMake[i]}</p>`;
     }
+}
+
+//база данных
+var masAuto = db;
+masAuto.sort(function (a, b) {
+    return b.parameters.price - a.parameters.price;
+});
+
+//фильтрация
+function funFilter() {
+
+    //    console.log("filter")
+
+    const checkBody = Array.from(document.getElementsByName('body')).filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
+
+    const checkClass = Array.from(document.getElementsByName('classA')).filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
+
+    const checkMake = Array.from(document.getElementsByName('make')).filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
+
+    const checkboxAuto = document.getElementsByClassName('checkbox_auto');
+
+    if (checkBody.length != 0 || checkClass.length != 0 || checkMake.length != 0) {
+        masAuto = db.filter((auto) => {
+            const isBody = checkBody.length === 0 || checkBody.includes(auto.parameters.body);
+            const isClass = checkClass.length === 0 || checkClass.includes(auto.parameters.class);
+            const isMake = checkMake.length === 0 || checkMake.includes(auto.parameters.make);
+
+            return auto.status == "true" && isBody && isClass && isMake;
+        });
+    } else {
+        masAuto = db
+    }
+
+    const priceA = document.querySelector("#priceA");
+    if (priceA.value == "few") {
+        masAuto.sort(function (a, b) {
+            return a.parameters.price - b.parameters.price;
+        });
+    } else {
+        masAuto.sort(function (a, b) {
+            return b.parameters.price - a.parameters.price;
+        });
+    }
+
+    const fNavAuto = document.querySelector(".nav_auto")
+    fNavAuto.innerHTML = ""
+
+    if (masAuto.length > 4) {
+        for (i = 1;
+            (i - 1) * 6 < masAuto.length; i++) {
+            navAuto.innerHTML += `<div class="num_auto color_auto" onclick="funNav(${i-1})">${i}</div>`
+        }
+
+        const numAuto = document.querySelector(".num_auto");
+        numAuto.classList.remove("color_auto");
+        numAuto.classList.add("color_auto_A");
+    }
+
+    funNav(0)
+
+}
+
+
+//добавление карточек с информацией об автомобиле
+const objects = document.querySelector(".objects");
+for (i = 0; i < masAuto.length && i < 6; i++) {
+
+    let priceAuto = `${masAuto[i].parameters.price}`
+    const scrDateEe = document.querySelector("#date_end")
+    const scrDateSs = document.querySelector("#date_start")
+    let dateE = new Date(`${scrDateEe.value}`)
+    let dateS = new Date(`${scrDateSs.value}`)
+    if ((dateE - dateS) / (1000 * 60 * 60 * 24) > 0) {
+        priceAuto = ((dateE - dateS) / (1000 * 60 * 60 * 24)) * parseInt(`${masAuto[i].parameters.price}`)
+    }
+
+    objects.innerHTML += `<div class="object">
+                            <div class="img"> <img src="BD/IMG/${masAuto[i].auto.img}" alt="auto${i+1}"> </div>
+                            <h4>${masAuto[i].auto.title}</h4>
+                            <div class="info">
+                                <div class="inf">
+                                    <p>Год выпуска <span class="i">${masAuto[i].auto.info.yearOfIssue}</span></p>
+                                    <p title="${masAuto[i].auto.info.kpp2}">КПП <span class="i">${masAuto[i].auto.info.kpp}</span></p>
+                                    <p>Мест <span class="i">${masAuto[i].auto.info.seats}</span></p>
+                                </div>
+                                <div class="price">
+                                    <p>Цена <span class="i">${priceAuto} руб</span></p>
+                                </div>
+                            </div>
+                            <div class="buttons">
+                                <a href="#" aria-label="Detailed information about the car">
+                                    <div class="button1">Подробнее</div>
+                                </a>
+                                <a href="#" aria-label="Rent a car">
+                                    <div class="button2">Арендовать</div>
+                                </a>
+                            </div>
+
+                        </div>`;
+
+}
+
+//количество страниц
+const navAuto = document.querySelector(".nav_auto");
+navAuto.innerHTML = ""
+if (masAuto.length > 4) {
+    for (i = 1;
+        (i - 1) * 6 < masAuto.length; i++) {
+        navAuto.innerHTML += `<div class="num_auto color_auto" onclick="funNav(${i-1})">${i}</div>`
+    }
+
+    const numAuto = document.querySelector(".num_auto");
+    numAuto.classList.remove("color_auto");
+    numAuto.classList.add("color_auto_A");
+}
+
+
+//переключение между страницами
+function funNav(a) {
+
+    if (masAuto.length > 4) {
+        const fNumAuto = document.getElementsByClassName('num_auto');
+        for (i = 0; i < fNumAuto.length; i++) {
+            if (fNumAuto[i].classList.contains("color_auto_A")) {
+                fNumAuto[i].classList.remove("color_auto_A");
+                fNumAuto[i].classList.add("color_auto");
+            }
+        }
+        fNumAuto[a].classList.remove("color_auto");
+        fNumAuto[a].classList.add("color_auto_A");
+    }
+
+    const fObjects = document.querySelector(".objects");
+    fObjects.innerHTML = "";
+
+    //наличие водителя
+    const checkDriver = Array.from(document.getElementsByName('driver')).filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
+    let isDriver = 0
+    if (checkDriver.length != 0) {
+        isDriver = 2000
+    }
+
+    for (i = a * 6; i < masAuto.length && i < a * 6 + 6; i++) {
+
+        //вычисление цены
+        const priceStart = parseInt(`${masAuto[i].parameters.price}`)
+        let priceAuto = priceStart + isDriver
+        const scrDateEe = document.querySelector("#date_end")
+        const scrDateSs = document.querySelector("#date_start")
+        let dateE = new Date(`${scrDateEe.value}`)
+        let dateS = new Date(`${scrDateSs.value}`)
+        const kolDay = (dateE - dateS) / (1000 * 60 * 60 * 24)
+        if (kolDay > 0) {
+            priceAuto = kolDay * (priceStart + isDriver)
+        }
+
+        fObjects.innerHTML += `<div class="object">
+                            <div class="img"> <img src="BD/IMG/${masAuto[i].auto.img}" alt="auto${i+1}"> </div>
+                            <h4>${masAuto[i].auto.title}</h4>
+                            <div class="info">
+                                <div class="inf">
+                                    <p>Год выпуска <span class="i">${masAuto[i].auto.info.yearOfIssue}</span></p>
+                                    <p title="${masAuto[i].auto.info.kpp2}">КПП <span class="i">${masAuto[i].auto.info.kpp}</span></p>
+                                    <p>Мест <span class="i">${masAuto[i].auto.info.seats}</span></p>
+                                </div>
+                                <div class="price">
+                                    <p>Цена <span class="i">${priceAuto} руб</span></p>
+                                </div>
+                            </div>
+                            <div class="buttons">
+                                <a href="#" aria-label="Detailed information about the car">
+                                    <div class="button1">Подробнее</div>
+                                </a>
+                                <a href="#" aria-label="Rent a car">
+                                    <div class="button2">Арендовать</div>
+                                </a>
+                            </div>
+
+                        </div>`;
+
+    }
+
+    const autos = document.querySelector(".autos");
+    autos.scrollIntoView();
 }

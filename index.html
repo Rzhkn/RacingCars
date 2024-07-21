@@ -130,7 +130,7 @@
                             <div class="input" id="in_1">
                                 <p>Дата окончания</p>
                                 <div class="date-container">
-                                    <input class="date" id="date_end" type="date" />
+                                    <input class="date" id="date_end" type="date" onchange="funFilter()"/>
                                     <div class="open-button"></div>
                                 </div>
                             </div>
@@ -177,7 +177,7 @@
                             <div class="checks">
                                 <div class="check">
                                     <p class="title_ch">Водитель</p>
-                                    <p class="text_ch"><input type="checkbox" name="a" value="1417"> С водителем</p>
+                                    <p class="text_ch"><input type="checkbox" name="driver" onchange="funFilter()"> С водителем</p>
                                 </div>
                                 <div class="check">
                                     <p class="title_ch">Тип кузова</p>
@@ -206,9 +206,9 @@
                 </div>
                 <div class="objects_wrap">
                     <div class="sort">
-                        <label for="">Цена: <select name="price" id="...">
-                                <option value="">Сначала дороже</option>
-                                <option value="Moscow">Сначала дешевле</option>
+                        <label>Цена: <select name="price" id="priceA" onchange="funFilter()">
+                                <option value="lot">Сначала дороже</option>
+                                <option value="few">Сначала дешевле</option>
                             </select></label>
                     </div>
                     <div class="objects"></div>
