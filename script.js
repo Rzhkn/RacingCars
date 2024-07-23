@@ -148,6 +148,12 @@ masAuto.sort(function (a, b) {
     return b.parameters.price - a.parameters.price;
 });
 
+//количество отображаемых карточек
+let __NumAuto=6
+if(window.innerWidth<=750){
+    __NumAuto=4
+}
+
 //фильтрация
 function funFilter() {
 
@@ -187,9 +193,8 @@ function funFilter() {
     const fNavAuto = document.querySelector(".nav_auto")
     fNavAuto.innerHTML = ""
 
-    if (masAuto.length > 4) {
-        for (i = 1;
-            (i - 1) * 6 < masAuto.length; i++) {
+    if (masAuto.length > __NumAuto) {
+        for (i = 1;(i - 1) * __NumAuto < masAuto.length; i++) {
             navAuto.innerHTML += `<div class="num_auto color_auto" onclick="funNav(${i-1})">${i}</div>`
         }
 
@@ -205,7 +210,7 @@ function funFilter() {
 
 //добавление карточек с информацией об автомобиле
 const objects = document.querySelector(".objects");
-for (i = 0; i < masAuto.length && i < 6; i++) {
+for (i = 0; i < masAuto.length && i < __NumAuto; i++) {
 
     let priceAuto = `${masAuto[i].parameters.price}`
     const scrDateEe = document.querySelector("#date_end")
@@ -245,9 +250,9 @@ for (i = 0; i < masAuto.length && i < 6; i++) {
 //количество страниц
 const navAuto = document.querySelector(".nav_auto");
 navAuto.innerHTML = ""
-if (masAuto.length > 4) {
+if (masAuto.length > __NumAuto+1) {
     for (i = 1;
-        (i - 1) * 6 < masAuto.length; i++) {
+        (i - 1) * __NumAuto < masAuto.length; i++) {
         navAuto.innerHTML += `<div class="num_auto color_auto" onclick="funNav(${i-1})">${i}</div>`
     }
 
@@ -260,7 +265,7 @@ if (masAuto.length > 4) {
 //переключение между страницами
 function funNav(a) {
 
-    if (masAuto.length > 4) {
+    if (masAuto.length > __NumAuto+1) {
         const fNumAuto = document.getElementsByClassName('num_auto');
         for (i = 0; i < fNumAuto.length; i++) {
             if (fNumAuto[i].classList.contains("color_auto_A")) {
@@ -282,7 +287,7 @@ function funNav(a) {
         isDriver = 2000
     }
 
-    for (i = a * 6; i < masAuto.length && i < a * 6 + 6; i++) {
+    for (i = a * __NumAuto; i < masAuto.length && i < a * __NumAuto + __NumAuto; i++) {
 
         //вычисление цены
         const priceStart = parseInt(`${masAuto[i].parameters.price}`)
@@ -324,4 +329,33 @@ function funNav(a) {
 
     const autos = document.querySelector(".autos");
     autos.scrollIntoView();
+}
+
+
+//функция для скролла
+function funScroll(a) {
+    if(document.querySelector("._active")) {
+        funBurger()
+    }
+    
+    document.querySelector(`${a}`).scrollIntoView({ behavior: 'smooth' });
+}
+
+//функция для бургера в шапке
+function funBurger() {
+    document.querySelector(".burger").classList.toggle("_active")
+    document.querySelector(".menu").classList.toggle("_active")
+    document.querySelector(".nav_text").classList.toggle("_active")
+    document.querySelector(".lin").classList.toggle("_active")
+    document.querySelector("body").classList.toggle("_active")
+    document.querySelector(".nav_bac").classList.toggle("_active")
+}
+
+//функция для бургера в фильтре
+function funBurger2() {
+    document.querySelector(".icon").classList.toggle("_activeAuto")
+    document.querySelector(".filter_wrap").classList.toggle("_activeAuto")
+    document.querySelector("body").classList.toggle("_activeAuto")
+    
+    document.querySelector(".filters").scrollIntoView({ behavior: 'smooth' });
 }

@@ -24,12 +24,14 @@
 
         <div class="nav_wrap">
             <div class="nav">
-                <a href="#" aria-label="Burger menu"><div class="menu"></div></a>
+                <a onclick="funBurger()" href="#" aria-label="Burger menu" class="burger">
+                    <div class="menu"></div>
+                </a>
                 <div class="nav_text">
-                    <a href="#" aria-label="Home">
+                    <a onclick="funScroll('.background')" aria-label="Home">
                         <div>Главная</div>
                     </a>
-                    <a href="#" aria-label="Car information">
+                    <a onclick="funScroll('.autos')" aria-label="Car information">
                         <div>Автомобили</div>
                     </a>
                     <a href="#" aria-label="Information about promotions">
@@ -42,6 +44,7 @@
                         <div>Контакты</div>
                     </a>
                 </div>
+                <div class="nav_bac"></div>
                 <a href="#" aria-label="Company phone number">
                     <div class="nav_tel">8-800-500-00-18</div>
                 </a>
@@ -71,8 +74,8 @@
                                 <div class="text">
                                     <h1>Аренда<br>автомобилей</h1>
                                     <h2>На все случаи жизни</h2>
-                                    <p>Свежие комфортабельные, безопасные, чистые автомобили, без наклеек и визуальных установок, застрахованы по КАСКО И ОСАГО</p>
-                                    <a href="#" aria-label="Car rental form">
+                                    <p>Свежие комфортабельные, безопасные, чистые автомобили, без наклеек и визуальных установок, застрахованы по КАСКО и ОСАГО</p>
+                                    <a onclick="funScroll('.autos')" aria-label="Car rental form">
                                         <div class="button">Арендовать сейчас</div>
                                     </a>
                                 </div>
@@ -110,99 +113,108 @@
             <div class="auto_wrap">
                 <div class="filters">
                     <div class="blur"></div>
-                    <a href="#" aria-label="Burger menu"><div class="icon"></div></a>
+                    <a onclick="funBurger2()" aria-label="Burger menu">
+                        <div class="icon"></div>
+                    </a>
                     <h3>Фильтры</h3>
 
-                    <div class="filter">
-                        <div class="lin"></div>
-                        <div class="title">
-                            <div class="img" style="background-image: url(IMG/calendar.svg)"></div>
-                            <p>Время аренды</p>
-                        </div>
-                        <div class="inputs">
-                            <div class="input">
-                                <p>Дата начала</p>
-                                <div class="date-container">
-                                    <input onchange="funDate()" class="date" id="date_start" type="date" />
-                                    <div class="open-button"></div>
+                    <div class="filter_wrap">
+
+
+
+                        <div class="filter">
+                            <div class="lin"></div>
+                            <div class="title">
+                                <div class="img" style="background-image: url(IMG/calendar.svg)"></div>
+                                <p>Время аренды</p>
+                            </div>
+                            <div class="inputs">
+                                <div class="input">
+                                    <p>Дата начала</p>
+                                    <div class="date-container">
+                                        <input onchange="funDate()" class="date" id="date_start" type="date" />
+                                        <div class="open-button"></div>
+                                    </div>
+                                </div>
+                                <div class="input" id="in_1">
+                                    <p>Дата окончания</p>
+                                    <div class="date-container">
+                                        <input class="date" id="date_end" type="date" onchange="funFilter()" />
+                                        <div class="open-button"></div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="input" id="in_1">
-                                <p>Дата окончания</p>
-                                <div class="date-container">
-                                    <input class="date" id="date_end" type="date" onchange="funFilter()"/>
-                                    <div class="open-button"></div>
+                        </div>
+
+                        <div class="filter">
+                            <div class="lin"></div>
+                            <div class="title">
+                                <div class="img" style="background-image: url(IMG/city.svg)"></div>
+                                <p>Город</p>
+                            </div>
+                            <div class="inputs">
+                                <div class="input">
+                                    <p>Город получения</p>
+                                    <select name="cities" id="...">
+                                        <option value="">Выберите город</option>
+                                        <option value="Moscow">Москва</option>
+                                        <option value="Saint-Petersburg">Санкт-Петербург</option>
+                                        <option value="Kazan">Казань</option>
+                                        <option value="Nizhny Novgorod">Нижний Новгород</option>
+                                    </select>
+                                </div>
+                                <div class="input">
+                                    <p>Город возврата</p>
+                                    <select name="cities" id="...">
+                                        <option value="">Выберите город</option>
+                                        <option value="Moscow">Москва</option>
+                                        <option value="Saint-Petersburg">Санкт-Петербург</option>
+                                        <option value="Kazan">Казань</option>
+                                        <option value="Nizhny Novgorod">Нижний Новгород</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
+
+                        <div class="filter">
+                            <div class="lin"></div>
+                            <div class="title">
+                                <div class="img" style="background-image: url(IMG/car.svg)"></div>
+                                <p>Автомобиль</p>
+                            </div>
+                            <div class="inputs">
+                                <div class="checks">
+                                    <div class="check">
+                                        <p class="title_ch">Водитель</p>
+                                        <p class="text_ch"><input type="checkbox" name="driver" onchange="funFilter()" id="ch"> С водителем</p>
+                                    </div>
+                                    <div class="check">
+                                        <p class="title_ch">Тип кузова</p>
+                                        <div class="check_wrap">
+                                            <div class="check_wrap_1 scr_body1"></div>
+                                            <div class="check_wrap_2 scr_body2"></div>
+                                        </div>
+                                    </div>
+                                    <div class="check">
+                                        <p class="title_ch">Класс автомобиля</p>
+                                        <div class="check_wrap">
+                                            <div class="check_wrap_1 scr_class1"></div>
+                                            <div class="check_wrap_2 scr_class2"></div>
+                                        </div>
+                                    </div>
+                                    <div class="check">
+                                        <p class="title_ch">Марка автомобиля</p>
+                                        <div class="check_wrap">
+                                            <div class="check_wrap_1 scr_make1"></div>
+                                            <div class="check_wrap_2 scr_make2"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
 
-                    <div class="filter">
-                        <div class="lin"></div>
-                        <div class="title">
-                            <div class="img" style="background-image: url(IMG/city.svg)"></div>
-                            <p>Город</p>
-                        </div>
-                        <div class="inputs">
-                            <div class="input">
-                                <p>Город получения</p>
-                                <select name="cities" id="...">
-                                    <option value="">Выберите город</option>
-                                    <option value="Moscow">Москва</option>
-                                    <option value="Saint-Petersburg">Санкт-Петербург</option>
-                                    <option value="Kazan">Казань</option>
-                                    <option value="Nizhny Novgorod">Нижний Новгород</option>
-                                </select>
-                            </div>
-                            <div class="input">
-                                <p>Город возврата</p>
-                                <select name="cities" id="...">
-                                    <option value="">Выберите город</option>
-                                    <option value="Moscow">Москва</option>
-                                    <option value="Saint-Petersburg">Санкт-Петербург</option>
-                                    <option value="Kazan">Казань</option>
-                                    <option value="Nizhny Novgorod">Нижний Новгород</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="filter">
-                        <div class="lin"></div>
-                        <div class="title">
-                            <div class="img" style="background-image: url(IMG/car.svg)"></div>
-                            <p>Автомобиль</p>
-                        </div>
-                        <div class="inputs">
-                            <div class="checks">
-                                <div class="check">
-                                    <p class="title_ch">Водитель</p>
-                                    <p class="text_ch"><input type="checkbox" name="driver" onchange="funFilter()"> С водителем</p>
-                                </div>
-                                <div class="check">
-                                    <p class="title_ch">Тип кузова</p>
-                                    <div class="check_wrap">
-                                        <div class="check_wrap_1 scr_body1"></div>
-                                        <div class="check_wrap_2 scr_body2"></div>
-                                    </div>
-                                </div>
-                                <div class="check">
-                                    <p class="title_ch">Класс автомобиля</p>
-                                    <div class="check_wrap">
-                                        <div class="check_wrap_1 scr_class1"></div>
-                                        <div class="check_wrap_2 scr_class2"></div>
-                                    </div>
-                                </div>
-                                <div class="check">
-                                    <p class="title_ch">Марка автомобиля</p>
-                                    <div class="check_wrap">
-                                        <div class="check_wrap_1 scr_make1"></div>
-                                        <div class="check_wrap_2 scr_make2"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <div class="objects_wrap">
                     <div class="sort">
@@ -230,7 +242,4 @@
 <script type="text/javascript" src="BD/db.js"></script>
 
 <!--вывод карточек-->
-<script type="text/javascript" src="script.js"></script>
-
-
-</html>
+<script type="text/javascript" src="script.js"></script></html>

@@ -17,6 +17,10 @@
     --size-car: calc(100px + 400 * (100vw / 1924));
 }
 
+a {
+    cursor: pointer;
+}
+
 .nav_wrap {
     min-height: 100px;
     background-color: var(--color-viol);
@@ -52,6 +56,10 @@
 .nav_text div:hover,
 .nav_tel:hover {
     transform: scale(1.1);
+}
+
+.nav_bac {
+    display: none;
 }
 
 .nav_tel {
@@ -289,7 +297,9 @@
 }
 
 .title p {
+    height: 20px;
     font-size: 1.3rem;
+    margin-top: auto;
     margin-left: 10px;
 }
 
@@ -466,7 +476,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 
 .object .info {
     user-select: none;
-    
+
 }
 
 .object .info .inf {
@@ -535,7 +545,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
     width: 40px;
     height: 40px;
     text-align: center;
-    place-content: center;
+    align-content: center;
     font-size: 1.3rem;
     font-weight: bold;
     border: 2px solid var(--color-fiol);
@@ -606,7 +616,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
         margin: 0;
         margin-top: 20px;
     }
-    
+
     .input input[type='date'] {
         width: 164px;
     }
@@ -623,7 +633,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
     #in_1 {
         margin-top: 70px;
     }
-    
+
     .objects_wrap .object {
         width: 300px;
         padding: 20px;
@@ -702,7 +712,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
     .avto {
         display: none;
     }
-    
+
     .objects_wrap .object {
         width: 370px;
         padding: 20px;
@@ -710,6 +720,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 }
 
 @media (max-width: 750px) {
+
     .nav {
         justify-content: space-between;
         padding-left: 20px;
@@ -722,6 +733,48 @@ input[type=date]::-webkit-calendar-picker-indicator {
 
     .nav_text {
         display: none;
+    }
+
+    .nav .menu._active {
+        background-image: url(IMG/close.svg);
+    }
+
+    .nav_text._active {
+        display: block;
+        position: absolute;
+        margin-top: 60px;
+        padding-top: 40px;
+        padding-left: 20px;
+        left: 0;
+        height: calc(100% - 90px);
+        z-index: 5;
+    }
+
+    .nav_bac._active {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        margin-top: 60px;
+        padding-top: 40px;
+        padding-left: 20px;
+        left: 0;
+        z-index: 3;
+        background-color: rgba(1, 1, 7, 0.7);
+    }
+
+    .nav_text._active div {
+        font-size: 1.6rem;
+        margin: 0;
+        margin-bottom: 25px;
+    }
+
+    .lin._active {
+        display: none;
+    }
+
+    body._active {
+        overflow: hidden;
     }
 
     .nav .nav_tel {
@@ -756,68 +809,100 @@ input[type=date]::-webkit-calendar-picker-indicator {
         margin: 0 auto;
         margin-top: 30px;
     }
-    
+
     .auto_wrap {
         display: block;
     }
-    
-    .auto_wrap .blur, .auto_wrap .filter {
+
+    .auto_wrap .blur,
+    .auto_wrap .filter_wrap {
         display: none;
     }
-    
+
     .auto_wrap .filters {
         display: flex;
         max-width: 100%;
         padding: 30px;
     }
-    
+
     .auto_wrap .filters h3 {
         margin: 0;
         margin-left: 20px;
     }
-    
+
     .auto_wrap .filters .icon {
         width: 40px;
         height: 40px;
         background-image: url(IMG/menu.svg);
     }
     
+    .auto_wrap .filter_wrap._activeAuto {
+        display: block;
+        position: absolute;
+        left: 0;
+        margin-top: 70px;
+        width: 100%;
+        height: 100vh;
+        padding-bottom: 100px;
+        background-color: rgba(1,1,7,0.98);
+        overflow-y: scroll;
+    }
+    
+    .auto_wrap .filter_wrap._activeAuto .checkbox_auto, .auto_wrap .filter_wrap._activeAuto #ch {
+        width: 25px;
+        height: 25px;
+    }
+    
+    .auto_wrap .filter_wrap._activeAuto .text_ch {
+        font-size: 1.4rem;
+    }
+    
+    body._activeAuto {
+        overflow: hidden;
+    }
+    
+    .filters .icon._activeAuto {
+        background-image: url(IMG/close.svg);
+    }
+
     .auto_wrap .objects_wrap {
         margin: 0;
         padding: 30px;
     }
-    
+
     .objects_wrap .object {
         width: 300px;
         padding: 20px;
     }
-    
+
 }
 
 @media (max-width: 480px) {
     * {
         font-size: 14px;
     }
-    
+
     .home p {
         padding: 0;
     }
-    
+
     .auto_wrap .filters {
         padding: 20px;
     }
-    
+
     .auto_wrap .objects_wrap {
         padding: 20px;
     }
-    
-     .objects_wrap .object {
+
+    .objects_wrap .object {
         width: 90%;
     }
 }
 
 @media (max-width: 350px) {
-    .object .button1, .object .button2 {
+
+    .object .button1,
+    .object .button2 {
         font-size: 0.85rem;
     }
 }
