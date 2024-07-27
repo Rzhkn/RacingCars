@@ -317,7 +317,7 @@ a {
     margin-left: 20px;
 }
 
-input[type=date]::-webkit-calendar-picker-indicator {
+input[type='date']::-webkit-calendar-picker-indicator {
     opacity: 0;
 }
 
@@ -397,6 +397,10 @@ input[type=date]::-webkit-calendar-picker-indicator {
 .check .check_wrap_1,
 .check .check_wrap_2 {
     width: calc(100% /2);
+}
+
+.button_filter {
+    display: none;
 }
 
 .objects_wrap {
@@ -760,7 +764,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
         padding-left: 20px;
         left: 0;
         z-index: 3;
-        background-color: rgba(1, 1, 7, 0.7);
+        background-color: rgba(1, 1, 7, 0.98);
     }
 
     .nav_text._active div {
@@ -835,7 +839,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
         height: 40px;
         background-image: url(IMG/menu.svg);
     }
-    
+
     .auto_wrap .filter_wrap._activeAuto {
         display: block;
         position: absolute;
@@ -843,24 +847,65 @@ input[type=date]::-webkit-calendar-picker-indicator {
         margin-top: 70px;
         width: 100%;
         height: 100vh;
-        padding-bottom: 100px;
-        background-color: rgba(1,1,7,0.98);
+        padding-bottom: 170px;
+        background-color: rgba(1, 1, 7, 0.98);
         overflow-y: scroll;
     }
-    
-    .auto_wrap .filter_wrap._activeAuto .checkbox_auto, .auto_wrap .filter_wrap._activeAuto #ch {
+
+    .auto_wrap .filter_wrap._activeAuto .checkbox_auto,
+    .auto_wrap .filter_wrap._activeAuto #ch {
         width: 25px;
         height: 25px;
     }
-    
+
     .auto_wrap .filter_wrap._activeAuto .text_ch {
-        font-size: 1.4rem;
+        font-size: 1.25rem;
+        font-weight: bold;
     }
-    
+
+    .auto_wrap .filter_wrap._activeAuto .input input[type='date'] {
+        width: 174px;
+        padding: 10px 5px;
+    }
+
+    /*
+    .auto_wrap .filter_wrap._activeAuto .open-button {
+        opacity: 0;
+    }
+
+    .auto_wrap .filter_wrap._activeAuto .input input[type=date]::-webkit-calendar-picker-indicator {
+        opacity: 100px;
+    }
+*/
+
+    .auto_wrap .filter_wrap._activeAuto .input select {
+        font-size: 1.1rem;
+        padding: 10px 5px;
+    }
+
+    .button_filter._activeAuto {
+        position: fixed;
+        display: block;
+        width: 150px;
+        bottom: 30px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        text-align: center;
+        font-family: "Oswald";
+        font-size: 1.3rem;
+        color: var(--color-black);
+        font-weight: bold;
+        padding-top: 10px;
+        padding-bottom: 15px;
+        border-radius: 5px;
+        background-color: var(--color-cian);
+    }
+
     body._activeAuto {
         overflow: hidden;
     }
-    
+
     .filters .icon._activeAuto {
         background-image: url(IMG/close.svg);
     }

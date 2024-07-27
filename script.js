@@ -356,6 +356,7 @@ function funBurger2() {
     document.querySelector(".icon").classList.toggle("_activeAuto")
     document.querySelector(".filter_wrap").classList.toggle("_activeAuto")
     document.querySelector("body").classList.toggle("_activeAuto")
+    document.querySelector(".button_filter").classList.toggle("_activeAuto")
     
     document.querySelector(".filters").scrollIntoView({ behavior: 'smooth' });
 }
