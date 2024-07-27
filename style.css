@@ -859,8 +859,9 @@ input[type='date']::-webkit-calendar-picker-indicator {
     }
 
     .auto_wrap .filter_wrap._activeAuto .text_ch {
-        font-size: 1.25rem;
+        font-size: 1.2rem;
         font-weight: bold;
+        margin-top: 12px;
     }
 
     .auto_wrap .filter_wrap._activeAuto .input input[type='date'] {
@@ -868,15 +869,15 @@ input[type='date']::-webkit-calendar-picker-indicator {
         padding: 10px 5px;
     }
 
-    /*
+    
     .auto_wrap .filter_wrap._activeAuto .open-button {
         opacity: 0;
     }
 
-    .auto_wrap .filter_wrap._activeAuto .input input[type=date]::-webkit-calendar-picker-indicator {
-        opacity: 100px;
+    .auto_wrap .filter_wrap._activeAuto .input input[type='date']::-webkit-calendar-picker-indicator {
+        opacity: 1;
     }
-*/
+
 
     .auto_wrap .filter_wrap._activeAuto .input select {
         font-size: 1.1rem;
