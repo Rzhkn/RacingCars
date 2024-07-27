@@ -23,17 +23,22 @@ body {
 }
 
 body::-webkit-scrollbar {
-  width: 15px; /* Ширина всего элемента навигации */
+    width: 15px;
+    /* Ширина всего элемента навигации */
 }
 
 body::-webkit-scrollbar-track {
-  background: var(--color-black); /* Цвет дорожки */
+    background: var(--color-black);
+    /* Цвет дорожки */
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: var(--color-viol); /* Цвет бегунка */
-  border-radius: 20px; /* Округление бегунка */
-  border: 3px solid var(--color-black); /* Оформление границ бегунка */
+    background-color: var(--color-viol);
+    /* Цвет бегунка */
+    border-radius: 20px;
+    /* Округление бегунка */
+    border: 3px solid var(--color-black);
+    /* Оформление границ бегунка */
 }
 
 a {
@@ -1161,9 +1166,13 @@ footer .lin {
         width: 300px;
         padding: 20px;
     }
-    
+
     .social_wrap .social_bac p {
         margin: 0 20px;
+    }
+
+    .social_wrap .social_bac p:hover {
+        font-size: 4rem;
     }
 
 }
@@ -1197,6 +1206,10 @@ footer .lin {
         font-size: 3rem;
         margin: 0 10px;
     }
+    
+    .social_wrap .social_bac p:hover {
+        font-size: 3rem;
+    }
 }
 
 @media (max-width: 350px) {
@@ -1205,7 +1218,7 @@ footer .lin {
     .object .button2 {
         font-size: 0.85rem;
     }
-    
+
     .reviews_wrap .review {
         min-width: 250px;
     }
