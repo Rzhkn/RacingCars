@@ -149,9 +149,9 @@ masAuto.sort(function (a, b) {
 });
 
 //количество отображаемых карточек
-let __NumAuto=6
-if(window.innerWidth<=750){
-    __NumAuto=4
+let __NumAuto = 6
+if (window.innerWidth <= 750) {
+    __NumAuto = 4
 }
 
 //фильтрация
@@ -194,7 +194,8 @@ function funFilter() {
     fNavAuto.innerHTML = ""
 
     if (masAuto.length > __NumAuto) {
-        for (i = 1;(i - 1) * __NumAuto < masAuto.length; i++) {
+        for (i = 1;
+            (i - 1) * __NumAuto < masAuto.length; i++) {
             navAuto.innerHTML += `<div class="num_auto color_auto" onclick="funNav(${i-1})">${i}</div>`
         }
 
@@ -250,7 +251,7 @@ for (i = 0; i < masAuto.length && i < __NumAuto; i++) {
 //количество страниц
 const navAuto = document.querySelector(".nav_auto");
 navAuto.innerHTML = ""
-if (masAuto.length > __NumAuto+1) {
+if (masAuto.length > __NumAuto + 1) {
     for (i = 1;
         (i - 1) * __NumAuto < masAuto.length; i++) {
         navAuto.innerHTML += `<div class="num_auto color_auto" onclick="funNav(${i-1})">${i}</div>`
@@ -265,7 +266,7 @@ if (masAuto.length > __NumAuto+1) {
 //переключение между страницами
 function funNav(a) {
 
-    if (masAuto.length > __NumAuto+1) {
+    if (masAuto.length > __NumAuto) {
         const fNumAuto = document.getElementsByClassName('num_auto');
         for (i = 0; i < fNumAuto.length; i++) {
             if (fNumAuto[i].classList.contains("color_auto_A")) {
@@ -334,11 +335,13 @@ function funNav(a) {
 
 //функция для скролла
 function funScroll(a) {
-    if(document.querySelector("._active")) {
+    if (document.querySelector("._active")) {
         funBurger()
     }
-    
-    document.querySelector(`${a}`).scrollIntoView({ behavior: 'smooth' });
+
+    document.querySelector(`${a}`).scrollIntoView({
+        behavior: 'smooth'
+    });
 }
 
 //функция для бургера в шапке
@@ -357,6 +360,32 @@ function funBurger2() {
     document.querySelector(".filter_wrap").classList.toggle("_activeAuto")
     document.querySelector("body").classList.toggle("_activeAuto")
     document.querySelector(".button_filter").classList.toggle("_activeAuto")
+
+    document.querySelector(".filters").scrollIntoView({
+        behavior: 'smooth'
+    });
+}
+
+//заполнение карточек с отзывами
+const reviews_wrap = document.querySelector(".reviews_items_wrap");
+for (i = 0; i < reviews.length; i++) {
+    reviews_wrap.innerHTML += `<div class="review">
+                    <h4>${reviews[i].name}</h4>
+                    <div class="grade"></div>
+                    <div class="comment">${reviews[i].comment}</div>
+                </div>`
+
+    const reviews_grade = document.getElementsByClassName("grade");
+    console.log(reviews_grade)
     
-    document.querySelector(".filters").scrollIntoView({ behavior: 'smooth' });
+//    const reviews_grade = document.getElementsByClassName(".grade");
+//    console.log(reviews_grade)
+    
+    let j = 0;
+    for (; j < reviews[i].grade; j++) {
+        reviews_grade[i].innerHTML += `<img src="IMG/star.svg" alt="star">`
+    }
+    for (; j < 5; j++) {
+        reviews_grade[i].innerHTML += `<img src="IMG/star_border.svg" alt="star_border">`
+    }
 }

@@ -152,8 +152,8 @@ const db = [
             "title": "Honda CR-V",
             "info": {
                 "yearOfIssue": "2021",
-                "kpp": "CVT",
-                "kpp2": "Вариатор",
+                "kpp": "А",
+                "kpp2": "Автомат",
                 "seats": "5"
             }
         },
