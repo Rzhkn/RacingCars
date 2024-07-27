@@ -157,7 +157,7 @@
                             <div class="inputs">
                                 <div class="input">
                                     <p>Город получения</p>
-                                    <select name="cities">
+                                    <select name="cities" aria-label="Choosing a city to rent a car">
                                         <option value="">Выберите город</option>
                                         <option value="Moscow">Москва</option>
                                         <option value="Saint-Petersburg">Санкт-Петербург</option>
@@ -167,7 +167,7 @@
                                 </div>
                                 <div class="input">
                                     <p>Город возврата</p>
-                                    <select name="cities">
+                                    <select name="cities" aria-label="Choosing a city to return the car">
                                         <option value="">Выберите город</option>
                                         <option value="Moscow">Москва</option>
                                         <option value="Saint-Petersburg">Санкт-Петербург</option>
@@ -222,7 +222,7 @@
                 </div>
                 <div class="objects_wrap">
                     <div class="sort">
-                        <label>Цена: <select name="price" id="priceA" onchange="funFilter()">
+                        <label>Цена: <select name="price" id="priceA" onchange="funFilter()" aria-label="Price sorting">
                                 <option value="lot">Сначала дороже</option>
                                 <option value="few">Сначала дешевле</option>
                             </select></label>
