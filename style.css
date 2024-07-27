@@ -694,17 +694,20 @@ input[type='date']::-webkit-calendar-picker-indicator {
     background-color: var(--color-black);
 }
 
+.social_inblock {
+    display: inline-block;
+}
+
 .social_wrap .social_bac {
     background-image: linear-gradient(to right, var(--color-cian), var(--color-rose));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: flex;
-    width: auto;
 }
 
 .social_wrap .social_bac p {
-    font-weight: bold;
-    font-size: 90px;
+    font-size: 4rem;
+    margin: 0 30px;
 }
 
 footer {
@@ -1153,6 +1156,15 @@ footer .lin {
     .objects_wrap .object {
         width: 90%;
     }
+
+    .reviews_wrap .review {
+        min-width: 300px;
+    }
+
+    .social_wrap .social_bac p {
+        font-size: 3rem;
+        margin: 0 15px;
+    }
 }
 
 @media (max-width: 350px) {
@@ -1160,5 +1172,9 @@ footer .lin {
     .object .button1,
     .object .button2 {
         font-size: 0.85rem;
+    }
+    
+    .reviews_wrap .review {
+        min-width: 250px;
     }
 }
