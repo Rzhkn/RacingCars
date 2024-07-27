@@ -7,11 +7,11 @@
     <meta name="description" content="On this site you can rent modern cars of good quality at a competitive price.">
     <title>RacingCars</title>
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preload" href="https://fonts.gstatic.com" as="font">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com" as="font">
+    <link rel="preload" href="https://fonts.gstatic.com" crossorigin as="font">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="iconsfont.css">
@@ -30,19 +30,19 @@
                     <div class="menu"></div>
                 </a>
                 <div class="nav_text">
-                    <a onclick="funScroll('.background')" aria-label="Home">
+                    <a onclick="funScroll('.background')" href="#" aria-label="Home">
                         <div>Главная</div>
                     </a>
-                    <a onclick="funScroll('.autos')" aria-label="Car information">
+                    <a onclick="funScroll('.autos')" href="#" aria-label="Car information">
                         <div>Автомобили</div>
                     </a>
-                    <a href="#" aria-label="Information about promotions">
+                    <a onclick="funScroll('#promotion')" href="#" aria-label="Information about promotions">
                         <div>Акции</div>
                     </a>
-                    <a href="#" aria-label="User reviews">
+                    <a onclick="funScroll('.reviews_wrap')" href="#" aria-label="User reviews">
                         <div>Отзывы</div>
                     </a>
-                    <a href="#" aria-label="Contact list">
+                    <a onclick="funScroll('.footer_wrap')" href="#" aria-label="Contact list">
                         <div>Контакты</div>
                     </a>
                 </div>
@@ -77,7 +77,7 @@
                                     <h1>Аренда<br>автомобилей</h1>
                                     <h2>На все случаи жизни</h2>
                                     <p>Свежие комфортабельные, безопасные, чистые автомобили, без наклеек и визуальных установок, застрахованы по КАСКО и ОСАГО</p>
-                                    <a onclick="funScroll('.autos')" aria-label="Car rental form">
+                                    <a onclick="funScroll('.autos')" aria-label="Car rental form" href="#">
                                         <div class="button">Арендовать сейчас</div>
                                     </a>
                                 </div>
@@ -134,14 +134,14 @@
                                 <div class="input">
                                     <p>Дата начала</p>
                                     <div class="date-container">
-                                        <input onchange="funDate()" class="date" id="date_start" type="date" />
+                                        <input onchange="funDate()" class="date" id="date_start" type="date" aria-label="Rental start date"/>
                                         <div class="open-button"></div>
                                     </div>
                                 </div>
                                 <div class="input" id="in_1">
                                     <p>Дата окончания</p>
                                     <div class="date-container">
-                                        <input class="date" id="date_end" type="date" onchange="funFilter()" />
+                                        <input class="date" id="date_end" type="date" onchange="funFilter()" aria-label="End date of lease"/>
                                         <div class="open-button"></div>
                                     </div>
                                 </div>
@@ -157,7 +157,7 @@
                             <div class="inputs">
                                 <div class="input">
                                     <p>Город получения</p>
-                                    <select name="cities" id="...">
+                                    <select name="cities">
                                         <option value="">Выберите город</option>
                                         <option value="Moscow">Москва</option>
                                         <option value="Saint-Petersburg">Санкт-Петербург</option>
@@ -167,7 +167,7 @@
                                 </div>
                                 <div class="input">
                                     <p>Город возврата</p>
-                                    <select name="cities" id="...">
+                                    <select name="cities">
                                         <option value="">Выберите город</option>
                                         <option value="Moscow">Москва</option>
                                         <option value="Saint-Petersburg">Санкт-Петербург</option>
@@ -188,7 +188,7 @@
                                 <div class="checks">
                                     <div class="check">
                                         <p class="title_ch">Водитель</p>
-                                        <p class="text_ch"><input type="checkbox" name="driver" onchange="funFilter()" id="ch"> С водителем</p>
+                                        <p class="text_ch"><input type="checkbox" name="driver" onchange="funFilter()" id="ch" aria-label="Car rental with driver"> С водителем</p>
                                     </div>
                                     <div class="check">
                                         <p class="title_ch">Тип кузова</p>

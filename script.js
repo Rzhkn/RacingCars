@@ -111,10 +111,10 @@ const scrBody2 = document.querySelector(".scr_body2");
 for (i = 0; i < masBody.length; i++) {
     if (i < masBody.length / 2) {
         scrBody1.innerHTML += `
-                                <p class="text_ch"><input class="checkbox_auto" type="checkbox" name="body" value="${masBody[i]}" onchange="funFilter()"> ${masBody[i]}</p>`;
+                                <p class="text_ch"><input class="checkbox_auto" type="checkbox" name="body" value="${masBody[i]}" onchange="funFilter()" aria-label="${masBody[i]}"> ${masBody[i]}</p>`;
     } else {
         scrBody2.innerHTML += `
-                            <p class="text_ch"><input class="checkbox_auto" type="checkbox" name="body" value="${masBody[i]}" onchange="funFilter()"> ${masBody[i]}</p>`;
+                            <p class="text_ch"><input class="checkbox_auto" type="checkbox" name="body" value="${masBody[i]}" onchange="funFilter()" aria-label="${masBody[i]}"> ${masBody[i]}</p>`;
     }
 }
 
@@ -123,10 +123,10 @@ const scrClass2 = document.querySelector(".scr_class2");
 for (i = 0; i < masClass.length; i++) {
     if (i < masClass.length / 2) {
         scrClass1.innerHTML += `
-                                <p class="text_ch"><input class="checkbox_auto" type="checkbox" name="classA" value="${masClass[i]}" onchange="funFilter()"> ${masClass[i]}</p>`;
+                                <p class="text_ch"><input class="checkbox_auto" type="checkbox" name="classA" value="${masClass[i]}" onchange="funFilter()" aria-label="${masClass[i]}"> ${masClass[i]}</p>`;
     } else {
         scrClass2.innerHTML += `
-                            <p class="text_ch"><input class="checkbox_auto" type="checkbox" name="classA" value="${masClass[i]}" onchange="funFilter()"> ${masClass[i]}</p>`;
+                            <p class="text_ch"><input class="checkbox_auto" type="checkbox" name="classA" value="${masClass[i]}" onchange="funFilter()" aria-label="${masClass[i]}"> ${masClass[i]}</p>`;
     }
 }
 
@@ -135,10 +135,10 @@ const scrMake2 = document.querySelector(".scr_make2");
 for (i = 0; i < masMake.length; i++) {
     if (i < masMake.length / 2) {
         scrMake1.innerHTML += `
-                                <p class="text_ch"><input class="checkbox_auto" type="checkbox" name="make" value="${masMake[i]}" onchange="funFilter()"> ${masMake[i]}</p>`;
+                                <p class="text_ch"><input class="checkbox_auto" type="checkbox" name="make" value="${masMake[i]}" onchange="funFilter()" aria-label="${masMake[i]}"> ${masMake[i]}</p>`;
     } else {
         scrMake2.innerHTML += `
-                            <p class="text_ch"><input class="checkbox_auto" type="checkbox" name="make" value="${masMake[i]}" onchange="funFilter()"> ${masMake[i]}</p>`;
+                            <p class="text_ch"><input class="checkbox_auto" type="checkbox" name="make" value="${masMake[i]}" onchange="funFilter()" aria-label="${masMake[i]}"> ${masMake[i]}</p>`;
     }
 }
 
@@ -370,16 +370,12 @@ function funBurger2() {
 const reviews_wrap = document.querySelector(".reviews_items_wrap");
 for (i = 0; i < reviews.length; i++) {
     reviews_wrap.innerHTML += `<div class="review">
-                    <h4>${reviews[i].name}</h4>
+                    <div class="h4">${reviews[i].name}</div>
                     <div class="grade"></div>
                     <div class="comment">${reviews[i].comment}</div>
                 </div>`
 
     const reviews_grade = document.getElementsByClassName("grade");
-    console.log(reviews_grade)
-    
-//    const reviews_grade = document.getElementsByClassName(".grade");
-//    console.log(reviews_grade)
     
     let j = 0;
     for (; j < reviews[i].grade; j++) {

@@ -1,6 +1,7 @@
 * {
     margin: 0;
-    font-family: 'Roboto';
+    font-display: swap;
+    font-family: 'Roboto', sans-serif;
     font-size: 16px;
     text-decoration: none;
     box-sizing: border-box;
@@ -8,9 +9,9 @@
 
 :root {
     --color-viol: #21194D;
-    --color-fiol: #646DA9;
+    --color-fiol: #645F83;
     --color-rose: #940290;
-    --color-rose-20: #4E1B69;
+    --color-rose-20: #451B66;
     --color-cian: #10EACC;
     --color-black: #010107;
 
@@ -667,7 +668,7 @@ input[type='date']::-webkit-calendar-picker-indicator {
     background-color: rgba(120, 131, 202, 0.1);
 }
 
-.reviews_wrap .review h4 {
+.reviews_wrap .review .h4 {
     font-family: "Oswald";
     font-size: 1.4rem;
 }
